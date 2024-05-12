@@ -1,0 +1,14 @@
+{
+  "description": "Show Hidden Tab Group",
+  "id": "showHiddenTabGroup",
+  "name": "Show Hidden Tab Group",
+  "options": [
+    {
+      "description": "Hidden Tab Group to show",
+      "name": "hiddenTabGroup",
+      "required": true,
+      "store": "HiddenTabGroups",
+      "type": "storage"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "hide and show tab groups",
+    "description": "Hide and show tab groups"
+  },
+  {
+    "name": "open extension pages",
+    "description": "Open extension pages"
+  },
+  {
+    "name": "send thank you to last message",
+    "description": "Send thank you reaction to last message in Slack"
+  }
+]

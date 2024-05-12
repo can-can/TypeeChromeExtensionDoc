@@ -1,0 +1,105 @@
+{
+  "actions": [
+    {
+      "action": "get",
+      "app": "tabGroup",
+      "description": "Get tab group",
+      "input": {
+        "tabGroupId": "$trigger.tabGroup"
+      },
+      "name": "getTabGroup",
+      "output": [
+        {
+          "description": "The tab group",
+          "name": "tabGroup",
+          "type": "object"
+        }
+      ]
+    },
+    {
+      "action": "query",
+      "app": "tab",
+      "currentIndex": 1,
+      "description": "Query all tabs of a tab group",
+      "input": {
+        "groupId": "$trigger.tabGroup"
+      },
+      "name": "queryAllTabs",
+      "output": [
+        {
+          "description": "The ids of the tabs",
+          "name": "tabIds",
+          "type": "array"
+        }
+      ]
+    },
+    {
+      "action": "map",
+      "app": "transform",
+      "description": "Map values",
+      "input": {
+        "array": "$queryAllTabs.tabs",
+        "mapping": "url"
+      },
+      "name": "map",
+      "output": [
+        {
+          "description": "The output object",
+          "name": "output",
+          "type": "array"
+        }
+      ]
+    },
+    {
+      "action": "set",
+      "app": "storage",
+      "currentIndex": 3,
+      "description": "set a value in storage",
+      "input": {
+        "key": "{{getTabGroup.tabGroup.title}}",
+        "store": "HiddenTabGroups",
+        "value": "$map.output"
+      },
+      "name": "storeTabId",
+      "output": []
+    },
+    {
+      "action": "loop",
+      "actions": [
+        {
+          "action": "close",
+          "app": "tab",
+          "description": "Close tab",
+          "input": {
+            "tabId": "{{loop}}"
+          },
+          "name": "closeATab",
+          "output": []
+        }
+      ],
+      "app": "flow",
+      "currentIndex": 4,
+      "description": "close all tabs",
+      "input": {
+        "items": "$queryAllTabs.tabIds"
+      },
+      "name": "closeTabs",
+      "output": []
+    }
+  ],
+  "description": "Hide Tab Group",
+  "id": "hideTabGroup",
+  "name": "Hide Tab Group",
+  "trigger": {
+    "output": [
+      {
+        "description": "Tab Group To Hide",
+        "name": "tabGroup",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "subType": "hideTabGroup",
+    "type": "command"
+  }
+}

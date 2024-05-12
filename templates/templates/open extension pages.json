@@ -1,0 +1,148 @@
+{
+  "name": "open extension pages",
+  "description": "Open extension pages",
+  "commands": [
+    {
+      "id": "openSettingPage",
+      "name": "Open Setting Page",
+      "description": "Open Setting Page",
+      "options": [],
+      "eagerExecution": true
+    },
+    {
+      "id": "openCommandPage",
+      "name": "Open Command Page",
+      "description": "Open Command Page",
+      "options": [],
+      "eagerExecution": true
+    },
+    {
+      "id": "openWorkflowPage",
+      "name": "Open Workflow Page",
+      "description": "Open Workflow Page",
+      "options": [],
+      "eagerExecution": true
+    },
+    {
+      "id": "openHelpPage",
+      "name": "Open Help Page",
+      "description": "Open Help Page",
+      "options": [],
+      "eagerExecution": true
+    },
+    {
+      "id": "openDiscordPage",
+      "name": "Open Discord Page",
+      "description": "Open Discord Page",
+      "options": [],
+      "eagerExecution": true
+    }
+  ],
+  "workflows": [
+    {
+      "id": "openSettingPage",
+      "name": "Open Setting Page",
+      "trigger": {
+        "type": "command",
+        "subType": "openSettingPage",
+        "data": {}
+      },
+      "description": "Open Setting Page",
+      "actions": [
+        {
+          "app": "tab",
+          "name": "Open Setting Page",
+          "action": "create",
+          "input": {
+            "url": "chrome-extension://agifbaonnnpmdpnemfhddffdledhhnen/settings-ui/index.html",
+            "active": "true"
+          }
+        }
+      ]
+    },
+    {
+      "id": "openCommandPage",
+      "name": "Open Command Page",
+      "trigger": {
+        "type": "command",
+        "subType": "openCommandPage",
+        "data": {}
+      },
+      "description": "Open Command Page",
+      "actions": [
+        {
+          "app": "tab",
+          "name": "Open Command Page",
+          "action": "create",
+          "input": {
+            "url": "chrome-extension://agifbaonnnpmdpnemfhddffdledhhnen/settings-ui/index.html#/commands",
+            "active": "true"
+          }
+        }
+      ]
+    },
+    {
+      "id": "openWorkflowPage",
+      "name": "Open Workflow Page",
+      "trigger": {
+        "type": "command",
+        "subType": "openWorkflowPage",
+        "data": {}
+      },
+      "description": "Open Workflow Page",
+      "actions": [
+        {
+          "app": "tab",
+          "name": "Open Workflow Page",
+          "action": "create",
+          "input": {
+            "url": "chrome-extension://agifbaonnnpmdpnemfhddffdledhhnen/settings-ui/index.html#/workflows",
+            "active": "true"
+          }
+        }
+      ]
+    },
+    {
+      "id": "openHelpPage",
+      "name": "Open Help Page",
+      "trigger": {
+        "type": "command",
+        "subType": "openHelpPage",
+        "data": {}
+      },
+      "description": "Open Help Page",
+      "actions": [
+        {
+          "app": "tab",
+          "name": "Open Help Page",
+          "action": "create",
+          "input": {
+            "url": "https://github.com/can-can/TypeeChromeExtensionDoc",
+            "active": "true"
+          }
+        }
+      ]
+    },
+    {
+      "id": "openDiscordPage",
+      "name": "Open Discord Page",
+      "trigger": {
+        "type": "command",
+        "subType": "openDiscordPage",
+        "data": {}
+      },
+      "description": "Open Discord Page",
+      "actions": [
+        {
+          "app": "tab",
+          "name": "Open Discord Page",
+          "action": "create",
+          "input": {
+            "url": "https://discord.gg/vmDj8yWEPA",
+            "active": "true"
+          }
+        }
+      ]
+    }
+  ]
+}

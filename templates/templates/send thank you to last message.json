@@ -1,0 +1,78 @@
+{
+  "name": "send thank you to last message",
+  "description": "Send thank you reaction to last message in Slack",
+  "commands": [
+    {
+      "description": "Send Thank You Reaction To Last Message In Slack",
+      "eagerExecution": true,
+      "id": "sendThankYouToLastMessage",
+      "name": "Send Thank You Reaction To Last Message In Slack",
+      "options": []
+    }
+  ],
+  "workflows": [
+    {
+      "actions": [
+        {
+          "action": "mouseOver",
+          "app": "browser",
+          "description": "Mouse over the element",
+          "input": {
+            "number": "1",
+            "reverse": "true",
+            "selector": ".c-message_kit__hover"
+          },
+          "name": "MouseOverMessage",
+          "output": []
+        },
+        {
+          "action": "mouseClick",
+          "app": "browser",
+          "currentIndex": 1,
+          "description": "Mouse click the element",
+          "input": {
+            "number": "1",
+            "reverse": "true",
+            "selector": ".c-message_kit__hover [data-qa='add_reaction']"
+          },
+          "name": "ClickAddReactions",
+          "output": []
+        },
+        {
+          "action": "mouseClick",
+          "app": "browser",
+          "currentIndex": 2,
+          "description": "Mouse click the element",
+          "input": {
+            "number": "",
+            "reverse": false,
+            "selector": "[data-name='grinning']"
+          },
+          "name": "ClickAReaction",
+          "output": []
+        },
+        {
+          "action": "mouseOut",
+          "app": "browser",
+          "currentIndex": 3,
+          "description": "Mouse out the element",
+          "input": {
+            "number": "1",
+            "reverse": "true",
+            "selector": ".c-message_kit__hover"
+          },
+          "name": "MouseOutMessage",
+          "output": []
+        }
+      ],
+      "description": "Send Thank You Reaction To Last Message In Slack",
+      "id": "sendThankYouToLastMessage",
+      "name": "Send Thank You Reaction To Last Message In Slack",
+      "trigger": {
+        "output": [],
+        "subType": "sendThankYouToLastMessage",
+        "type": "command"
+      }
+    }
+  ]
+}

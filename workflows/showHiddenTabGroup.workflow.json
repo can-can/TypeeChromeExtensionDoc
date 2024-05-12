@@ -1,0 +1,112 @@
+{
+  "actions": [
+    {
+      "action": "get",
+      "app": "storage",
+      "currentIndex": 1,
+      "description": "get Tabs Of Hidden Tab Group",
+      "input": {
+        "key": "$trigger.hiddenTabGroup",
+        "store": "HiddenTabGroups"
+      },
+      "name": "getTabsOfHiddenTabGroup",
+      "output": [
+        {
+          "description": "The value",
+          "name": "value",
+          "type": "any"
+        }
+      ]
+    },
+    {
+      "action": "loop",
+      "actions": [
+        {
+          "action": "create",
+          "app": "tab",
+          "description": "Create new tab",
+          "input": {
+            "url": "{{loop}}"
+          },
+          "name": "createTab",
+          "output": [
+            {
+              "description": "The id of the tab",
+              "name": "tabId",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "app": "flow",
+      "currentIndex": 1,
+      "description": "create tabs",
+      "input": {
+        "items": "$getTabsOfHiddenTabGroup.value"
+      },
+      "name": "createTabs",
+      "output": []
+    },
+    {
+      "action": "map",
+      "app": "transform",
+      "description": "Map values",
+      "input": {
+        "array": "$createTab.items",
+        "mapping": "tabId"
+      },
+      "name": "transform-map-3",
+      "output": [
+        {
+          "description": "The output object",
+          "name": "output",
+          "type": "array"
+        }
+      ]
+    },
+    {
+      "action": "group",
+      "app": "tab",
+      "currentIndex": 2,
+      "description": "Group tabs",
+      "input": {
+        "tabIds": "$transform-map-3.output"
+      },
+      "name": "groupTabs",
+      "output": [
+        {
+          "description": "The id of the group",
+          "name": "groupId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "action": "update",
+      "app": "tabGroup",
+      "currentIndex": 4,
+      "description": "Update tab group",
+      "input": {
+        "tabGroupId": "$groupTabs.groupId",
+        "title": "$trigger.hiddenTabGroup"
+      },
+      "name": "tabGroup-update-4",
+      "output": []
+    }
+  ],
+  "description": "Show Hidden Tab Group",
+  "id": "showHiddenTabGroup",
+  "name": "Show Hidden Tab Group",
+  "trigger": {
+    "output": [
+      {
+        "description": "Hidden Tab Group to show",
+        "name": "hiddenTabGroup",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "subType": "showHiddenTabGroup",
+    "type": "command"
+  }
+}

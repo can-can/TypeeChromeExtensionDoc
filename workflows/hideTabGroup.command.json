@@ -1,0 +1,13 @@
+{
+  "description": "Hide Tab Group",
+  "id": "hideTabGroup",
+  "name": "Hide Tab Group",
+  "options": [
+    {
+      "description": "Tab Group To Hide",
+      "name": "tabGroup",
+      "required": true,
+      "type": "tabGroups"
+    }
+  ]
+}
