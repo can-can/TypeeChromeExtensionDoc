@@ -124,7 +124,7 @@
       ]
     },
     {
-      "id": "openDiscordPage",
+    "id": "openDiscordPage",
       "name": "Open Discord Page",
       "trigger": {
         "type": "command",

@@ -1,0 +1,30 @@
+{
+  "name": "alias management",
+  "description": "Manage command aliases",
+  "commands": [
+    {
+      "id": "alias",
+      "name": "Manage aliases",
+      "description": "Manage aliases",
+      "options": [
+        {"name":"delete","description":"alias to delete","required":false,"type":"storage","store":"alias"}
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "id": "manage-alias",
+      "name": "Manage aliases",
+      "description": "Manage aliases",
+      "trigger": {"type":"command","subType":"alias","data":{}},
+      "actions": [
+        {
+          "name": "Remove Alias Action",
+          "app": "alias",
+          "action": "remove",
+          "input": {"alias":"$trigger.delete"}
+        }
+      ]
+    }
+  ]
+}

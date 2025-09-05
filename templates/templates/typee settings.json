@@ -1,0 +1,50 @@
+{
+  "name": "typee settings",
+  "description": "Update Typee UI settings",
+  "commands": [
+    {
+      "id": "typeeSettings",
+      "name": "Typee Settings",
+      "description": "Typee Settings",
+      "options": [
+        {"name":"top","description":"Top position","required":false,"type":"string"},
+        {"name":"width","description":"UI width","required":false,"type":"string"},
+        {"name":"bottom","description":"Bottom position","required":false,"type":"string"},
+        {"name":"reverse","description":"Reverse list order","required":false,"type":"string","choices":[{"name":"true","value":"true"},{"name":"false","value":"false"}]},
+        {"name":"align","description":"Alignment","required":false,"type":"string"},
+        {"name":"left","description":"Left position","required":false,"type":"string"},
+        {"name":"right","description":"Right position","required":false,"type":"string"},
+        {"name":"reset","description":"Reset all settings","required":false,"type":"string","choices":[{"name":"true","value":"true"},{"name":"false","value":"false"}]},
+        {"name":"showTips","description":"Show tips flag","required":false,"type":"string","choices":[{"name":"true","value":"true"},{"name":"false","value":"false"}]},
+        {"name":"completionList","description":"Completion list mode","required":false,"type":"string"}
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "id": "typee-settings",
+      "name": "Typee Settings",
+      "description": "Typee Settings",
+      "trigger": {"type":"command","subType":"typeeSettings","data":{}},
+      "actions": [
+        {
+          "name": "Update Typee Settings Action",
+          "app": "typeeSettings",
+          "action": "update",
+          "input": {
+            "top": "$trigger.top",
+            "width": "$trigger.width",
+            "bottom": "$trigger.bottom",
+            "reverse": "$trigger.reverse",
+            "align": "$trigger.align",
+            "left": "$trigger.left",
+            "right": "$trigger.right",
+            "showTips": "$trigger.showTips",
+            "completionList": "$trigger.completionList",
+            "reset": "$trigger.reset"
+          }
+        }
+      ]
+    }
+  ]
+}

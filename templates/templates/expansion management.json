@@ -1,0 +1,27 @@
+{
+  "name": "expansion management",
+  "description": "Manage expansions (auto-alias for frequently used commands)",
+  "commands": [
+    {
+      "id": "expansion",
+      "name": "Manage Expansions",
+      "description": "Manage Expansions which are automatically alias for frequently used commands",
+      "options": [
+        {"name":"delete","description":"expansion to delete","required":false,"type":"storage","store":"expansions"},
+        {"name":"add","description":"add expansion","required":false,"type":"string"}
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "id": "manage-expansion",
+      "name": "Manage Expansions",
+      "description": "Manage Expansions which are automatically alias for frequently used commands",
+      "trigger": {"type":"command","subType":"expansion","data":{}},
+      "actions": [
+        {"name":"Remove Expansion Action","app":"expansion","action":"remove","input":{"key":"$trigger.delete"}},
+        {"name":"Add Expansion Action","app":"expansion","action":"add","input":{"json":"$trigger.add"}}
+      ]
+    }
+  ]
+}

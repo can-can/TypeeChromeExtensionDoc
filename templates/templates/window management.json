@@ -1,0 +1,31 @@
+{
+  "name": "window management",
+  "description": "Window management commands and workflows",
+  "commands": [
+    {
+      "id": "mergeWindow",
+      "name": "Merge Window",
+      "description": "Merge Window",
+      "options": [
+        {"name":"toWindow","description":"Window to move tab to","required":false,"type":"windows"},
+        {"name":"fromWindow","description":"Window to move tab from","required":false,"type":"windows"}
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "id": "merge-window",
+      "name": "Merge Window",
+      "description": "Merge Window",
+      "trigger": {"type":"command","subType":"mergeWindow","data":{}},
+      "actions": [
+        {
+          "name": "Merge Window Action",
+          "app": "window",
+          "action": "merge",
+          "input": {"toWindowId":"$trigger.toWindow","fromWindowIds":"$trigger.fromWindow"}
+        }
+      ]
+    }
+  ]
+}

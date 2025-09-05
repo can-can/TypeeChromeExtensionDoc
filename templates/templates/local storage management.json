@@ -1,0 +1,30 @@
+{
+  "name": "local storage management",
+  "description": "Manage chrome local storage entries",
+  "commands": [
+    {
+      "id": "localStorage",
+      "name": "Manage local storage",
+      "description": "Manage local storage",
+      "options": [
+        {"name":"delete","description":"local storage to delete","required":false,"type":"storage","store":"localStorage"}
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "id": "local-storage",
+      "name": "Manage local storage",
+      "description": "Manage local storage",
+      "trigger": {"type":"command","subType":"localStorage","data":{}},
+      "actions": [
+        {
+          "name": "Remove Chrome Storage Action",
+          "app": "chromeStorage",
+          "action": "remove",
+          "input": {"key":"$trigger.delete"}
+        }
+      ]
+    }
+  ]
+}
