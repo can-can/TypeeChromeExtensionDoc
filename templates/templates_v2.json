@@ -12,18 +12,6 @@
     "description": "Send thank you reaction to last message in Slack"
   },
   {
-    "name": "alias management",
-    "description": "Manage command aliases"
-  },
-  {
-    "name": "expansion management",
-    "description": "Manage expansions (auto-alias for frequently used commands)"
-  },
-  {
-    "name": "local storage management",
-    "description": "Manage chrome local storage entries"
-  },
-  {
     "name": "tab management",
     "description": "Common tab and tab group management commands and workflows"
   },
