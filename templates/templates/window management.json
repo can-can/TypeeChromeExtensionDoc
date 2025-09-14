@@ -7,8 +7,18 @@
       "name": "Merge Window",
       "description": "Merge Window",
       "options": [
-        {"name":"toWindow","description":"Window to move tab to","required":false,"type":"windows"},
-        {"name":"fromWindow","description":"Window to move tab from","required":false,"type":"windows"}
+        {
+          "name": "toWindow",
+          "description": "Window to move tab to",
+          "required": false,
+          "type": "windows"
+        },
+        {
+          "name": "fromWindow",
+          "description": "Window to move tab from",
+          "required": false,
+          "type": "windows"
+        }
       ]
     }
   ],
@@ -17,13 +27,34 @@
       "id": "merge-window",
       "name": "Merge Window",
       "description": "Merge Window",
-      "trigger": {"type":"command","subType":"mergeWindow","data":{}},
+      "trigger": {
+        "type": "command",
+        "subType": "mergeWindow",
+        "data": {},
+        "output": [
+          {
+            "name": "toWindow",
+            "description": "Window to move tab to",
+            "required": false,
+            "type": "windows"
+          },
+          {
+            "name": "fromWindow",
+            "description": "Window to move tab from",
+            "required": false,
+            "type": "windows"
+          }
+        ]
+      },
       "actions": [
         {
           "name": "Merge Window Action",
           "app": "window",
           "action": "merge",
-          "input": {"toWindowId":"$trigger.toWindow","fromWindowIds":"$trigger.fromWindow"}
+          "input": {
+            "toWindowId": "$trigger.toWindow",
+            "fromWindowIds": "$trigger.fromWindow"
+          }
         }
       ]
     }

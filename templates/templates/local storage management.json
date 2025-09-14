@@ -7,7 +7,13 @@
       "name": "Manage local storage",
       "description": "Manage local storage",
       "options": [
-        {"name":"delete","description":"local storage to delete","required":false,"type":"storage","store":"localStorage"}
+        {
+          "name": "delete",
+          "description": "local storage to delete",
+          "required": false,
+          "type": "storage",
+          "store": "localStorage"
+        }
       ]
     }
   ],
@@ -16,13 +22,28 @@
       "id": "local-storage",
       "name": "Manage local storage",
       "description": "Manage local storage",
-      "trigger": {"type":"command","subType":"localStorage","data":{}},
+      "trigger": {
+        "type": "command",
+        "subType": "localStorage",
+        "data": {},
+        "output": [
+          {
+            "name": "delete",
+            "description": "local storage to delete",
+            "required": false,
+            "type": "storage",
+            "store": "localStorage"
+          }
+        ]
+      },
       "actions": [
         {
           "name": "Remove Chrome Storage Action",
           "app": "chromeStorage",
           "action": "remove",
-          "input": {"key":"$trigger.delete"}
+          "input": {
+            "key": "$trigger.delete"
+          }
         }
       ]
     }

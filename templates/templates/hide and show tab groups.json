@@ -128,7 +128,7 @@
             "description": "Tab Group To Hide",
             "name": "tabGroup",
             "required": true,
-            "type": "string"
+            "type": "tabGroups"
           }
         ],
         "subType": "hideTabGroup",
@@ -247,7 +247,8 @@
             "description": "Hidden Tab Group to show",
             "name": "hiddenTabGroup",
             "required": true,
-            "type": "string"
+            "store": "HiddenTabGroups",
+            "type": "storage"
           }
         ],
         "subType": "showHiddenTabGroup",

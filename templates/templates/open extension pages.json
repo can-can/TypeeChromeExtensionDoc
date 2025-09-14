@@ -45,7 +45,8 @@
       "trigger": {
         "type": "command",
         "subType": "openSettingPage",
-        "data": {}
+        "data": {},
+        "output": []
       },
       "description": "Open Setting Page",
       "actions": [
@@ -66,7 +67,8 @@
       "trigger": {
         "type": "command",
         "subType": "openCommandPage",
-        "data": {}
+        "data": {},
+        "output": []
       },
       "description": "Open Command Page",
       "actions": [
@@ -87,7 +89,8 @@
       "trigger": {
         "type": "command",
         "subType": "openWorkflowPage",
-        "data": {}
+        "data": {},
+        "output": []
       },
       "description": "Open Workflow Page",
       "actions": [
@@ -108,7 +111,8 @@
       "trigger": {
         "type": "command",
         "subType": "openHelpPage",
-        "data": {}
+        "data": {},
+        "output": []
       },
       "description": "Open Help Page",
       "actions": [
@@ -124,12 +128,13 @@
       ]
     },
     {
-    "id": "openDiscordPage",
+      "id": "openDiscordPage",
       "name": "Open Discord Page",
       "trigger": {
         "type": "command",
         "subType": "openDiscordPage",
-        "data": {}
+        "data": {},
+        "output": []
       },
       "description": "Open Discord Page",
       "actions": [

@@ -7,7 +7,13 @@
       "name": "Manage aliases",
       "description": "Manage aliases",
       "options": [
-        {"name":"delete","description":"alias to delete","required":false,"type":"storage","store":"alias"}
+        {
+          "name": "delete",
+          "description": "alias to delete",
+          "required": false,
+          "type": "storage",
+          "store": "alias"
+        }
       ]
     }
   ],
@@ -16,13 +22,28 @@
       "id": "manage-alias",
       "name": "Manage aliases",
       "description": "Manage aliases",
-      "trigger": {"type":"command","subType":"alias","data":{}},
+      "trigger": {
+        "type": "command",
+        "subType": "alias",
+        "data": {},
+        "output": [
+          {
+            "name": "delete",
+            "description": "alias to delete",
+            "required": false,
+            "type": "storage",
+            "store": "alias"
+          }
+        ]
+      },
       "actions": [
         {
           "name": "Remove Alias Action",
           "app": "alias",
           "action": "remove",
-          "input": {"alias":"$trigger.delete"}
+          "input": {
+            "alias": "$trigger.delete"
+          }
         }
       ]
     }

@@ -7,8 +7,19 @@
       "name": "Manage Expansions",
       "description": "Manage Expansions which are automatically alias for frequently used commands",
       "options": [
-        {"name":"delete","description":"expansion to delete","required":false,"type":"storage","store":"expansions"},
-        {"name":"add","description":"add expansion","required":false,"type":"string"}
+        {
+          "name": "delete",
+          "description": "expansion to delete",
+          "required": false,
+          "type": "storage",
+          "store": "expansions"
+        },
+        {
+          "name": "add",
+          "description": "add expansion",
+          "required": false,
+          "type": "string"
+        }
       ]
     }
   ],
@@ -17,10 +28,43 @@
       "id": "manage-expansion",
       "name": "Manage Expansions",
       "description": "Manage Expansions which are automatically alias for frequently used commands",
-      "trigger": {"type":"command","subType":"expansion","data":{}},
+      "trigger": {
+        "type": "command",
+        "subType": "expansion",
+        "data": {},
+        "output": [
+          {
+            "name": "delete",
+            "description": "expansion to delete",
+            "required": false,
+            "type": "storage",
+            "store": "expansions"
+          },
+          {
+            "name": "add",
+            "description": "add expansion",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      },
       "actions": [
-        {"name":"Remove Expansion Action","app":"expansion","action":"remove","input":{"key":"$trigger.delete"}},
-        {"name":"Add Expansion Action","app":"expansion","action":"add","input":{"json":"$trigger.add"}}
+        {
+          "name": "Remove Expansion Action",
+          "app": "expansion",
+          "action": "remove",
+          "input": {
+            "key": "$trigger.delete"
+          }
+        },
+        {
+          "name": "Add Expansion Action",
+          "app": "expansion",
+          "action": "add",
+          "input": {
+            "json": "$trigger.add"
+          }
+        }
       ]
     }
   ]
