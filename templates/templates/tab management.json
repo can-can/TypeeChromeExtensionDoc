@@ -499,14 +499,17 @@
       },
       "actions": [
         {
-          "name": "Move Tab Action",
-          "app": "tab",
           "action": "move",
+          "app": "tab",
+          "description": "Move tab",
           "input": {
+            "tab": "{{trigger.tab}}",
+            "tabGroup": "{{trigger.tabGroup}}",
             "tabId": "$trigger.tab",
-            "index": "$trigger.toLeftOfTab",
-            "windowId": "$trigger.toNewWindow"
-          }
+            "toLeftOfTab": "{{trigger.toLeftOfTab}}",
+            "toNewWindow": "{{trigger.toNewWindow}}"
+          },
+          "name": "Move Tab Action"
         }
       ]
     },
@@ -771,13 +774,14 @@
       },
       "actions": [
         {
-          "name": "Move Tab Group Action",
-          "app": "tabGroup",
           "action": "move",
+          "app": "tabGroup",
+          "description": "Move Tab Group to another Position/Window",
           "input": {
-            "tabGroupId": "$trigger.tabGroup",
-            "index": "$trigger.toLeftOfTab"
-          }
+            "tabGroup": "{{trigger.tabGroup}}",
+            "toLeftOfTab": "{{trigger.toLeftOfTab}}"
+          },
+          "name": "Move Tab Group Action"
         }
       ]
     },
