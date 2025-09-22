@@ -62,7 +62,7 @@
         {
           "name": "target",
           "description": "Tab to close, if this is not specified, default is current tab",
-          "required": false,
+          "required": true,
           "type": "tabs"
         }
       ]
