@@ -264,6 +264,7 @@
       "id": "goToTab",
       "name": "Go To Tab",
       "description": "Go To Tab",
+      "eagerExecution": true,
       "options": [
         {
           "name": "target",
